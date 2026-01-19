@@ -1,0 +1,42 @@
+# Site settings
+title: Umpqua United Soccer Club
+description: Umpqua United Soccer Club - Building champions on and off the field
+email: info@umpquaunited.org
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.umpquaunited.org" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Programs
+    url: /programs
+  - title: Fields
+    url: /fields
+  - title: Contact
+    url: /contact
+
+# Social links
+social:
+  facebook: https://www.facebook.com/umpquaunited
+  instagram: https://www.instagram.com/umpquaunited
