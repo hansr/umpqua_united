@@ -3,9 +3,7 @@
     <nav class="navbar">
       <div class="navbar-brand">
         <a href="{{ '/' | relative_url }}" class="logo-link">
-          <div class="logo-circle">
-            <span class="logo-text">UU</span>
-          </div>
+          <img src="{{ '/assets/images/hero/umpqua-logo.png' | relative_url }}" alt="Umpqua United Soccer Club" class="site-logo">
           <span class="brand-text">Umpqua United</span>
         </a>
       </div>
@@ -18,8 +16,20 @@
       
       <ul class="navbar-nav" id="navbar-nav">
         {% for item in site.navigation %}
+        {% assign is_active = false %}
+        {% if item.url == '/' %}
+          {% if page.url == '/' or page.url == '/index.html' or page.url == '/index/' %}
+            {% assign is_active = true %}
+          {% endif %}
+        {% else %}
+          {% assign item_base = item.url | remove: '/' | remove: '.html' %}
+          {% assign page_base = page.url | remove: '/' | remove: '.html' | remove: 'index' %}
+          {% if page_base == item_base %}
+            {% assign is_active = true %}
+          {% endif %}
+        {% endif %}
         <li class="nav-item">
-          <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}active{% endif %}">
+          <a href="{{ item.url | relative_url }}" class="nav-link {% if is_active %}active{% endif %}">
             {{ item.title }}
           </a>
         </li>

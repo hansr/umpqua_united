@@ -159,22 +159,14 @@ a:hover {
   color: var(--text-primary);
 }
 
-.logo-circle {
-  width: 50px;
+.site-logo {
   height: 50px;
-  border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 700;
-  font-size: 1.25rem;
-  box-shadow: var(--shadow-md);
+  width: auto;
+  display: block;
   transition: transform var(--transition-base);
 }
 
-.logo-link:hover .logo-circle {
+.logo-link:hover .site-logo {
   transform: scale(1.05);
 }
 
@@ -345,15 +337,17 @@ a:hover {
 }
 
 .btn-outline {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
   color: var(--primary);
-  border-color: var(--primary);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline:hover {
-  background: var(--primary);
-  color: white;
+  background: white;
+  color: var(--primary);
   transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
 }
 
 .btn-large {
@@ -375,14 +369,33 @@ a:hover {
   background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
 }
 
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
 .hero-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-  opacity: 0.3;
+  background-image: url('../images/hero/soccer-kids.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .hero-background {
+    background-attachment: scroll;
+  }
 }
 
 .hero-overlay {
@@ -391,16 +404,24 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: linear-gradient(
+    135deg,
+    rgba(19, 67, 46, 0.88) 0%,
+    rgba(26, 95, 63, 0.80) 50%,
+    rgba(45, 134, 89, 0.88) 100%
+  );
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   color: white;
   max-width: 800px;
+  margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-md);
+  width: 100%;
 }
 
 .hero-title {
@@ -437,6 +458,7 @@ a:hover {
   opacity: 0.7;
   animation: bounce 2s infinite;
   cursor: pointer;
+  z-index: 2;
 }
 
 @keyframes fadeInUp {
@@ -692,13 +714,16 @@ a:hover {
 }
 
 .cta-actions .btn-outline {
+  background: rgba(255, 255, 255, 0.15);
   color: white;
   border-color: white;
+  backdrop-filter: blur(10px);
 }
 
 .cta-actions .btn-outline:hover {
   background: white;
   color: var(--primary);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
 }
 
 /* ============================================

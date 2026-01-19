@@ -2,8 +2,8 @@
 title: Umpqua United Soccer Club
 description: Umpqua United Soccer Club - Building champions on and off the field
 email: info@umpquaunited.org
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.umpquaunited.org" # the base hostname & protocol for your site
+baseurl: "/umpqua_united" # the subpath of your site, e.g. /blog
+url: "https://hansr.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
