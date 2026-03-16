@@ -27,9 +27,8 @@ title: Contact
           <div>
             <h3>Location</h3>
             <p>
-              <strong>Fir Grove Park</strong><br>
-              576 Stewart Park Dr.<br>
-              Roseburg, OR 97471
+              <strong>Umpqua United Soccer Club</strong><br>
+              {{ site.contact.address }}
             </p>
           </div>
         </div>
@@ -54,10 +53,22 @@ title: Contact
             </svg>
           </div>
           <div>
-            <h3>Office Hours</h3>
+            <h3>Phone</h3>
+            <p><a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a></p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3>Office hours</h3>
             <p>
-              Monday - Friday: 9:00 AM - 5:00 PM<br>
-              Saturday: 8:00 AM - 2:00 PM<br>
+              Monday – Friday: 9:00 AM – 5:00 PM<br>
+              Saturday: 8:00 AM – 2:00 PM<br>
               Sunday: Closed
             </p>
           </div>

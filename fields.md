@@ -6,7 +6,7 @@ title: Fields
 <section class="page-header">
   <div class="container">
     <h1>Field Information</h1>
-    <p class="page-subtitle">Fir Grove Park - 576 Stewart Park Dr., Roseburg, OR 97471</p>
+    <p class="page-subtitle">Stewart Park — {{ site.contact.address }}</p>
   </div>
 </section>
 

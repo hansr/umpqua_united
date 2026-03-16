@@ -6,7 +6,7 @@ title: About
 <section class="page-header">
   <div class="container">
     <h1>About Umpqua United</h1>
-    <p class="page-subtitle">Building champions on and off the field since 1974</p>
+    <p class="page-subtitle">Who we are</p>
   </div>
 </section>
 
@@ -14,41 +14,58 @@ title: About
   <div class="container">
     <div class="content-grid">
       <div class="content-main">
-        <h2>Our Mission</h2>
-        <p>Umpqua United Soccer Club is dedicated to developing young athletes through the beautiful game of soccer. We believe in fostering not just athletic excellence, but also character, teamwork, and a lifelong love for the sport.</p>
-        
-        <h2>Our History</h2>
-        <p>Founded in 1974, Umpqua United has been a cornerstone of youth soccer in Roseburg, Oregon for over 50 years. We've grown from a small local club to a premier organization serving hundreds of young athletes across multiple age groups.</p>
-        
+        <h2>Our story</h2>
+        <p>Founded in {{ site.founded }}, Umpqua United is a non-profit soccer club serving Roseburg and Douglas County. We offer recreational soccer for ages 5–14 and competitive soccer for ages 9–14. We are affiliated with the Oregon Youth Soccer Association (OYSA).</p>
+
+        <h2>Mission</h2>
+        <p>{{ site.mission }}</p>
+
+        <h2>Vision</h2>
+        <p>{{ site.vision }}</p>
+
         <h2>Our Values</h2>
+        <p>Our logo embodies our core values and represents our community.</p>
+        <figure class="about-icon-figure">
+          <img src="{{ '/assets/images/UUSC_ICON.jpg' | relative_url }}" alt="Umpqua United Soccer Club icon" class="about-icon-img">
+        </figure>
+        <p>Each branch of the Douglas Fir tree represents a core value:</p>
         <ul class="values-list">
-          <li><strong>Excellence:</strong> We strive for excellence in everything we do, both on and off the field.</li>
-          <li><strong>Respect:</strong> We treat everyone with dignity and respect, regardless of their role or background.</li>
-          <li><strong>Teamwork:</strong> We believe that success comes through collaboration and mutual support.</li>
-          <li><strong>Development:</strong> We focus on the holistic development of our players as athletes and individuals.</li>
-          <li><strong>Community:</strong> We are committed to building a strong, inclusive soccer community.</li>
+          <li><strong>Passion</strong></li>
+          <li><strong>Resilience</strong></li>
+          <li><strong>Respect</strong></li>
+          <li><strong>Teamwork</strong></li>
+          <li><strong>Commitment</strong></li>
         </ul>
-        
-        <h2>Our Facilities</h2>
-        <p>Located at Fir Grove Park in Roseburg, Oregon, our state-of-the-art facility features 11 dedicated soccer fields, each designed to meet the specific needs of different age groups. Our fields are well-maintained and provide a safe, professional environment for training and competition.</p>
+        <p>The &ldquo;74&rdquo; represents the year soccer was founded in our community.</p>
+        <p>The green circle represents our community and our families—both where we come from and who we represent.</p>
+
+        <h2>Contact</h2>
+        <p>
+          {{ site.contact.address }}<br>
+          Phone: <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a><br>
+          <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>
+        </p>
       </div>
-      
+
       <div class="content-sidebar">
         <div class="sidebar-card">
-          <h3>Quick Facts</h3>
+          <h3>Information</h3>
           <ul class="facts-list">
-            <li><strong>Founded:</strong> 1974</li>
-            <li><strong>Location:</strong> Roseburg, Oregon</li>
-            <li><strong>Fields:</strong> 11 dedicated fields</li>
-            <li><strong>Age Groups:</strong> U6 to U14</li>
-            <li><strong>Players:</strong> 500+ active players</li>
+            <li><strong>Founded:</strong> {{ site.founded }}</li>
+            <li><strong>Location:</strong> {{ site.location }}</li>
+            <li><strong>Recreational:</strong> Ages 5–14</li>
+            <li><strong>Competitive:</strong> Ages 9–14</li>
           </ul>
+          <p class="sidebar-links">
+            <a href="{{ '/about/staff' | relative_url }}">Our Staff</a><br>
+            <a href="{{ '/brand-guidelines.html' | relative_url }}">Brand guidelines</a><br>
+            <a href="{{ '/about/code-of-conduct' | relative_url }}">Code of Conduct</a>
+          </p>
         </div>
-        
         <div class="sidebar-card">
-          <h3>Get Involved</h3>
-          <p>Whether you're a player, parent, or volunteer, there's a place for you at Umpqua United.</p>
-          <a href="/contact" class="btn btn-primary">Contact Us</a>
+          <h3>Get involved</h3>
+          <p>Volunteer as a coach or help support the club.</p>
+          <a href="{{ '/get-involved' | relative_url }}" class="btn btn-primary">Get involved</a>
         </div>
       </div>
     </div>

@@ -2,204 +2,164 @@
 layout: home
 ---
 
-<section class="hero">
-  <div class="hero-background">
-    <div class="hero-overlay"></div>
+<section class="announcement-banner" aria-label="Announcements">
+  <div class="container">
+    <div class="announcement-banner-rotator">
+      <div class="announcement-banner-slide announcement-banner-slide--active" data-slide="0">Rec season practices begin the week of March 30th!</div>
+      <div class="announcement-banner-slide" data-slide="1">Coaches wanted! We need 1 coach for U6, 2 coaches for U8, and 1 coach for U14!</div>
+    </div>
   </div>
+</section>
+
+<section class="hero hero-cfc">
+  <div class="hero-background"></div>
   <div class="container">
     <div class="hero-content">
-      <h1 class="hero-title">Umpqua United Soccer Club</h1>
-      <p class="hero-subtitle">Building champions on and off the field</p>
+      <h1 class="hero-title">We are Umpqua United Soccer Club</h1>
+      <p class="hero-tagline">{{ site.tagline | default: "Building champions on and off the field" }}</p>
+      <p class="hero-mission">{{ site.mission }}</p>
       <div class="hero-actions">
-        <a href="/programs" class="btn btn-primary btn-large">Explore Programs</a>
-        <a href="/contact" class="btn btn-outline btn-large">Get in Touch</a>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M12 5v14M19 12l-7 7-7-7"/>
-    </svg>
-  </div>
-</section>
-
-<section class="features">
-  <div class="container">
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-            <circle cx="9" cy="7" r="4"></circle>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-          </svg>
-        </div>
-        <h3>All Ages Welcome</h3>
-        <p>Programs for players from U6 to U14, fostering development at every level.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-        </div>
-        <h3>Premier Facilities</h3>
-        <p>State-of-the-art fields at Fir Grove Park with 11 dedicated playing fields.</p>
-      </div>
-      
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-        </div>
-        <h3>Expert Coaching</h3>
-        <p>Experienced coaches dedicated to developing skills, character, and teamwork.</p>
+        <a href="{{ site.stack_sports_register | default: '/programs' }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">Register</a>
+        <a href="{{ '/about' | relative_url }}" class="btn btn-hero-outline btn-large">Get to know us</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="field-map-section">
+<section class="sponsors-section sponsors-home">
   <div class="container">
-    <div class="section-header">
-      <h2>2026 Spring Field Map</h2>
-      <p>Fir Grove Park - 576 Stewart Park Dr., Roseburg, OR 97471</p>
-    </div>
-    
-    <div class="field-map-container">
-      <div class="field-map-info">
-        <div class="field-legend">
-          <h3>Field Layout</h3>
-          <div class="legend-items">
-            <div class="legend-item">
-              <span class="legend-color" style="background: #10b981;"></span>
-              <span>U14 Fields (1, 4, 9)</span>
-            </div>
-            <div class="legend-item">
-              <span class="legend-color" style="background: #3b82f6;"></span>
-              <span>U12 Fields (2, 3, 8)</span>
-            </div>
-            <div class="legend-item">
-              <span class="legend-color" style="background: #f59e0b;"></span>
-              <span>U10 Fields (5, 6, 11)</span>
-            </div>
-            <div class="legend-item">
-              <span class="legend-color" style="background: #ef4444;"></span>
-              <span>U6/8 Fields (7, 10)</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="field-details">
-          <h3>Field Information</h3>
-          <div class="field-list">
-            <div class="field-item">
-              <strong>Fields 1, 4, 9:</strong> U14
-            </div>
-            <div class="field-item">
-              <strong>Fields 2, 3, 8:</strong> U12
-            </div>
-            <div class="field-item">
-              <strong>Fields 5, 6, 11:</strong> U10
-            </div>
-            <div class="field-item">
-              <strong>Fields 7, 10:</strong> U6/8
-            </div>
-          </div>
-          <div class="field-note">
-            <p><strong>Note:</strong> Each field has designated areas for teams and fans. Please respect field assignments and maintain a positive environment for all players.</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="field-map-visual">
-        <div class="map-placeholder">
-          <svg viewBox="0 0 800 600" class="field-map-svg">
-            <!-- Background -->
-            <rect width="800" height="600" fill="#2d5016"/>
-            
-            <!-- River -->
-            <path d="M0,50 Q200,100 400,80 T800,60" stroke="#1e40af" stroke-width="40" fill="none" opacity="0.6"/>
-            <text x="100" y="70" fill="#93c5fd" font-size="14" font-weight="600">South Umpqua River</text>
-            
-            <!-- Fields -->
-            <!-- U14 Fields (Green) -->
-            <rect x="100" y="150" width="120" height="80" fill="#10b981" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="160" y="195" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">1</text>
-            <text x="160" y="210" text-anchor="middle" fill="#fff" font-size="12">U14</text>
-            
-            <rect x="350" y="150" width="120" height="80" fill="#10b981" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="410" y="195" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">4</text>
-            <text x="410" y="210" text-anchor="middle" fill="#fff" font-size="12">U14</text>
-            
-            <rect x="600" y="300" width="120" height="80" fill="#10b981" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="660" y="345" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">9</text>
-            <text x="660" y="360" text-anchor="middle" fill="#fff" font-size="12">U14</text>
-            
-            <!-- U12 Fields (Blue) -->
-            <rect x="250" y="150" width="120" height="80" fill="#3b82f6" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="310" y="195" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">2</text>
-            <text x="310" y="210" text-anchor="middle" fill="#fff" font-size="12">U12</text>
-            
-            <rect x="500" y="150" width="120" height="80" fill="#3b82f6" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="560" y="195" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">3</text>
-            <text x="560" y="210" text-anchor="middle" fill="#fff" font-size="12">U12</text>
-            
-            <rect x="500" y="300" width="120" height="80" fill="#3b82f6" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="560" y="345" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">8</text>
-            <text x="560" y="360" text-anchor="middle" fill="#fff" font-size="12">U12</text>
-            
-            <!-- U10 Fields (Orange) -->
-            <rect x="100" y="300" width="120" height="80" fill="#f59e0b" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="160" y="345" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">5</text>
-            <text x="160" y="360" text-anchor="middle" fill="#fff" font-size="12">U10</text>
-            
-            <rect x="250" y="300" width="120" height="80" fill="#f59e0b" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="310" y="345" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">6</text>
-            <text x="310" y="360" text-anchor="middle" fill="#fff" font-size="12">U10</text>
-            
-            <rect x="600" y="450" width="120" height="80" fill="#f59e0b" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="660" y="495" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">11</text>
-            <text x="660" y="510" text-anchor="middle" fill="#fff" font-size="12">U10</text>
-            
-            <!-- U6/8 Fields (Red) -->
-            <rect x="350" y="300" width="120" height="80" fill="#ef4444" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="410" y="345" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">7</text>
-            <text x="410" y="360" text-anchor="middle" fill="#fff" font-size="12">U6/8</text>
-            
-            <rect x="350" y="450" width="120" height="80" fill="#ef4444" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="410" y="495" text-anchor="middle" fill="#fff" font-weight="700" font-size="16">10</text>
-            <text x="410" y="510" text-anchor="middle" fill="#fff" font-size="12">U6/8</text>
-            
-            <!-- Office -->
-            <rect x="400" y="200" width="60" height="40" fill="#6b7280" stroke="#fff" stroke-width="2" rx="4"/>
-            <text x="430" y="225" text-anchor="middle" fill="#fff" font-size="12" font-weight="600">Office</text>
-            
-            <!-- Logo -->
-            <circle cx="650" cy="320" r="25" fill="#1a5f3f" stroke="#fff" stroke-width="2"/>
-            <text x="650" y="328" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">UU</text>
-            <text x="650" y="355" text-anchor="middle" fill="#fff" font-size="10">74</text>
-          </svg>
-        </div>
-      </div>
+    <div class="sponsors-grid">
+      {% for sponsor in site.sponsors %}
+      <a href="{{ sponsor.url }}" class="sponsor-link" target="_blank" rel="noopener" title="{{ sponsor.name }}">
+        <img src="{{ sponsor.image | prepend: '/assets/images/sponsors/' | relative_url }}" alt="{{ sponsor.name }}" class="sponsor-logo" width="160" height="80">
+      </a>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<section class="cta-section">
+<section class="who-we-are">
   <div class="container">
-    <div class="cta-content">
-      <h2>Ready to Join the Team?</h2>
-      <p>Whether you're a new player or returning member, we welcome you to Umpqua United Soccer Club.</p>
-      <div class="cta-actions">
-        <a href="/programs" class="btn btn-primary btn-large">View Programs</a>
-        <a href="/contact" class="btn btn-outline btn-large">Contact Us</a>
-      </div>
+    <h2 class="section-title">Who we are</h2>
+    <p class="who-we-are-lead">We are a non-profit soccer club founded in {{ site.founded }} and offer recreational soccer for ages 5–14 as well as competitive soccer for ages 9–14.</p>
+    <p class="who-we-are-mission">{{ site.mission }}</p>
+    <a href="{{ '/about' | relative_url }}" class="btn btn-outline">Learn more</a>
+  </div>
+</section>
+
+<section class="programs-grid-section">
+  <div class="container">
+    <h2 class="section-title">Our programs</h2>
+    <div class="programs-grid-bend">
+      <a href="{{ '/programs/recreational' | relative_url }}" class="program-tile">
+        <span class="program-tile-title">Recreational</span>
+        <span class="program-tile-ages">Ages 5–14 · Fall & Spring</span>
+      </a>
+      <a href="{{ '/programs/competitive' | relative_url }}" class="program-tile">
+        <span class="program-tile-title">Competitive</span>
+        <span class="program-tile-ages">Ages 9–14 · Tryouts</span>
+      </a>
+      <a href="{{ '/tryouts' | relative_url }}" class="program-tile program-tile-cta">
+        <span class="program-tile-title">Tryouts</span>
+        <span class="program-tile-ages">HS Winter League</span>
+      </a>
     </div>
   </div>
 </section>
+
+<section class="featured-cta">
+  <div class="container">
+    <div class="featured-cta-inner">
+      <h2>2026 Spring Rec — Registration closed</h2>
+      <p>Fall 2026 registration opens in May. <strong>HS Winter League Tryouts</strong> — register now.</p>
+      <a href="{{ '/tryouts' | relative_url }}" class="btn btn-primary btn-large">Tryouts</a>
+    </div>
+  </div>
+</section>
+
+<section class="field-map-teaser">
+  <div class="container">
+    <h2 class="section-title">Season Field Map</h2>
+    <p>2026 Spring Field Map — Stewart Park, Roseburg</p>
+    <a href="{{ '/fields' | relative_url }}" class="btn btn-outline">View map</a>
+  </div>
+</section>
+
+<section class="support-section">
+  <div class="container">
+    <h2 class="section-title">Support UUSC</h2>
+    <p>Support our club with <strong>Grab a Blue Bag</strong> (BottleDrop Give):</p>
+    <ol class="support-steps">
+      <li>Grab a blue bag at the club</li>
+      <li>Fill the bag with cans and bottles</li>
+      <li>Drop off the bag</li>
+    </ol>
+    <a href="{{ '/get-involved/#support' | relative_url }}" class="btn btn-outline">Read more</a>
+  </div>
+</section>
+
+<section class="news-section">
+  <div class="container">
+    <h2 class="section-title">Latest news</h2>
+    <div class="news-grid">
+      <a href="{{ '/news' | relative_url }}" class="news-card">
+        <h3>Goal Lines Magazine</h3>
+        <p>Your source for all things soccer from Oregon Youth Soccer Association.</p>
+        <span class="news-link">Read more →</span>
+      </a>
+      <a href="{{ '/news' | relative_url }}" class="news-card">
+        <h3>Support UUSC</h3>
+        <p>Support our club and help us grow.</p>
+        <span class="news-link">Read more →</span>
+      </a>
+      <a href="{{ '/news' | relative_url }}" class="news-card">
+        <h3>Understanding our logo</h3>
+        <p>Our identity and club culture — core values that represent Umpqua United.</p>
+        <span class="news-link">Read more →</span>
+      </a>
+    </div>
+    <a href="{{ '/news' | relative_url }}" class="btn btn-outline">All news</a>
+  </div>
+</section>
+
+<section class="events-section">
+  <div class="container">
+    <h2 class="section-title">Upcoming events</h2>
+    <p class="events-note">Game schedules and full calendar are on our registration platform.</p>
+    <a href="{{ site.stack_sports_register | default: '#' }}" class="btn btn-outline" target="_blank" rel="noopener">View schedule</a>
+  </div>
+</section>
+
+<section class="club-info-section">
+  <div class="container">
+    <h2 class="section-title">Important club information</h2>
+    <ul class="club-info-links">
+      {% for link in site.club_info_links %}
+      <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="helpful-links-section">
+  <div class="container">
+    <h2 class="section-title">Helpful links</h2>
+    <ul class="helpful-links">
+      {% for link in site.helpful_links %}
+      <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Get in touch</h2>
+    <p class="contact-name">{{ site.title }}</p>
+    <p>{{ site.contact.address }}</p>
+    <p>Phone: <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a></p>
+    <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+    <a href="{{ '/fields' | relative_url }}" class="link-inline">Field map</a>
+  </div>
+</section>
+
