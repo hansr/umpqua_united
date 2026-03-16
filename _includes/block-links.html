@@ -1,0 +1,28 @@
+{% comment %}
+  Reusable block with title and list of links.
+  Params: title, links (array of {title, url}), background, wide. Or block (object with title, same array as links).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _links = b.links %}
+  {% assign _background = b.background | default: include.background | default: "primary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% else %}
+  {% assign _title = include.title %}
+  {% assign _links = include.links %}
+  {% assign _background = include.background | default: "primary" %}
+  {% assign _wide = include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} links-block {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _links and _links.size > 0 %}
+    <ul class="links-list">
+      {% for link in _links %}
+      <li><a href="{{ link.url }}" {% if link.url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>

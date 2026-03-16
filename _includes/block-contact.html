@@ -1,0 +1,17 @@
+{% comment %}
+  Reusable contact block. Uses site.title and site.contact.
+  Params: title (optional, default "Get in touch"), background, wide.
+{% endcomment %}
+{% assign _title = include.title | default: "Get in touch" %}
+{% assign _background = include.background | default: "secondary" %}
+{% assign _wide = include.wide | default: true %}
+<section class="block block--{{ _background }} block--wide contact-block">
+  <div class="container">
+    <h2 class="section-title">{{ _title }}</h2>
+    <p class="contact-name">{{ site.title }}</p>
+    <p>{{ site.contact.address }}</p>
+    <p>Phone: <a href="tel:{{ site.contact.phone }}">{{ site.contact.phone }}</a></p>
+    <p><a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+    <a href="{{ '/fields' | relative_url }}" class="link-inline">Field map</a>
+  </div>
+</section>

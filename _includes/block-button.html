@@ -1,0 +1,12 @@
+{% comment %} Renders a CTA button from page: button_url/button_link, button_text/button_title, or show_register_button {% endcomment %}
+{% assign _url = include.button_link | default: page.button_link | default: page.button_url %}
+{% assign _text = include.button_title | default: page.button_title | default: page.button_text %}
+{% if page.show_register_button %}
+  {% assign _url = site.stack_sports_register | default: '#' %}
+  {% assign _text = page.button_text | default: page.button_title | default: "Register" %}
+{% endif %}
+{% if _url and _text %}
+<p class="content-cta">
+  <a href="{{ _url }}" class="btn btn-primary btn-large" {% if _url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ _text }}</a>
+</p>
+{% endif %}

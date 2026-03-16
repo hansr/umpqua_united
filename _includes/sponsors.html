@@ -1,0 +1,12 @@
+{% assign sponsors = include.sponsors | default: page.sponsors | default: site.sponsors %}
+<section class="sponsors-section sponsors-home">
+  <div class="container sponsors-carousel-wrap">
+    <div class="sponsors-grid" id="sponsors-grid">
+      {% for sponsor in sponsors %}
+      <a href="{{ sponsor.url }}" class="sponsor-link" target="_blank" rel="noopener" title="{{ sponsor.name }}">
+        <img src="{{ sponsor.image | prepend: '/assets/images/sponsors/' | relative_url }}" alt="{{ sponsor.name }}" class="sponsor-logo" width="160" height="80">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

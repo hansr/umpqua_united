@@ -1,0 +1,33 @@
+{% comment %}
+  Reusable block with title, lead, unordered list, optional image. Params: block (object with title, lead, items, image, image_alt).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _lead = b.lead %}
+  {% assign _items = b.items %}
+  {% assign _image = b.image %}
+  {% assign _image_alt = b.image_alt %}
+  {% assign _text_after = b.text_after %}
+  {% assign _background = b.background | default: include.background | default: "primary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} info-block {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _lead %}<p class="block-lead">{{ _lead }}</p>{% endif %}
+    {% if _image %}
+    <figure class="about-icon-figure">
+      <img src="{{ _image | prepend: '/assets/images/' | relative_url }}" alt="{{ _image_alt | default: _title }}" class="about-icon-img">
+    </figure>
+    {% endif %}
+    {% if _items and _items.size > 0 %}
+    <ul class="block-list">
+      {% for item in _items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    {% if _text_after %}<p class="block-text">{{ _text_after }}</p>{% endif %}
+  </div>
+</section>

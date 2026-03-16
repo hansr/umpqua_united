@@ -1,0 +1,41 @@
+{% comment %}
+  Reusable simple content block.
+  Params: title, content (single paragraph) OR lead + text (two paragraphs),
+          button_title, button_link,
+          background (primary|secondary, default primary), wide (true|false, default false)
+  Also accepts: block (object) - if set, use block.title, block.lead, block.text, block.content, block.button_title, block.button_link
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = include.title | default: b.title %}
+  {% assign _lead = include.lead | default: b.lead %}
+  {% assign _text = include.text | default: b.text %}
+  {% assign _content = include.content | default: b.content %}
+  {% assign _button_title = include.button_title | default: b.button_title | default: b.button_text %}
+  {% assign _button_link = include.button_link | default: b.button_link | default: b.button_url %}
+  {% assign _background = include.background | default: b.background | default: "primary" %}
+  {% assign _wide = include.wide | default: b.wide %}
+{% else %}
+  {% assign _title = include.title %}
+  {% assign _lead = include.lead %}
+  {% assign _text = include.text %}
+  {% assign _content = include.content %}
+  {% assign _button_title = include.button_title | default: include.button_text %}
+  {% assign _button_link = include.button_link | default: include.button_url %}
+  {% assign _background = include.background | default: "primary" %}
+  {% assign _wide = include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} info-block {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _content %}
+      <p class="block-lead">{{ _content }}</p>
+    {% else %}
+      {% if _lead %}<p class="block-lead">{{ _lead }}</p>{% endif %}
+      {% if _text %}<p class="block-text">{{ _text }}</p>{% endif %}
+    {% endif %}
+    {% if _button_title and _button_link %}
+    <a href="{{ _button_link | relative_url }}" class="btn btn-outline" {% if _button_link contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ _button_title }}</a>
+    {% endif %}
+  </div>
+</section>

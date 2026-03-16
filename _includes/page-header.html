@@ -1,0 +1,9 @@
+{% assign _title = include.title | default: page.title %}
+{% assign _subtitle = include.subtitle | default: page.subtitle %}
+{% if _subtitle == nil and page.url contains 'fields' %}{% assign _subtitle = "Stewart Park — " | append: site.contact.address %}{% endif %}
+<section class="page-header">
+  <div class="container">
+    <h1>{{ _title }}</h1>
+    {% if _subtitle %}<p class="page-subtitle">{{ _subtitle }}</p>{% endif %}
+  </div>
+</section>

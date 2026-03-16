@@ -1,0 +1,41 @@
+{% comment %}
+  Reusable block with title, lead, ordered steps list, and button.
+  Params: title, lead, steps (array), button_title, button_link, background, wide. Or block (object).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _lead = b.lead %}
+  {% assign _steps = b.steps %}
+  {% assign _text = b.text %}
+  {% assign _button_title = b.button_title | default: b.button_text %}
+  {% assign _button_link = b.button_link | default: b.button_url %}
+  {% assign _background = b.background | default: include.background | default: "primary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% else %}
+  {% assign _title = include.title %}
+  {% assign _lead = include.lead %}
+  {% assign _steps = include.steps %}
+  {% assign _text = include.text %}
+  {% assign _button_title = include.button_title | default: include.button_text %}
+  {% assign _button_link = include.button_link | default: include.button_url %}
+  {% assign _background = include.background | default: "primary" %}
+  {% assign _wide = include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} info-block {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _lead %}<p class="block-lead">{{ _lead }}</p>{% endif %}
+    {% if _steps and _steps.size > 0 %}
+    <ol class="steps-list">
+      {% for step in _steps %}
+      <li>{{ step }}</li>
+      {% endfor %}
+    </ol>
+    {% endif %}
+    {% if _text %}<p class="block-text">{{ _text }}</p>{% endif %}
+    {% if _button_title and _button_link %}
+    <a href="{{ _button_link | relative_url }}" class="btn btn-outline">{{ _button_title }}</a>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,27 @@
+{% comment %}
+  Reusable CTA block (accent background).
+  Params: heading, text, button_title, button_link. Or block (object).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _heading = b.heading %}
+  {% assign _text = b.text %}
+  {% assign _button_title = b.button_title | default: b.button_text %}
+  {% assign _button_link = b.button_link | default: b.button_url %}
+{% else %}
+  {% assign _heading = include.heading %}
+  {% assign _text = include.text %}
+  {% assign _button_title = include.button_title | default: include.button_text %}
+  {% assign _button_link = include.button_link | default: include.button_url %}
+{% endif %}
+<section class="cta-block">
+  <div class="container">
+    <div class="cta-block-inner">
+      {% if _heading %}<h2>{{ _heading }}</h2>{% endif %}
+      {% if _text %}<p>{{ _text }}</p>{% endif %}
+      {% if _button_title and _button_link %}
+      <a href="{{ _button_link | relative_url }}" class="btn btn-primary btn-large">{{ _button_title }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

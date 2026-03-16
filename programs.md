@@ -1,32 +1,39 @@
 ---
 layout: default
-title: Programs
+title: Our Programs
+subtitle: Recreational and competitive soccer for ages 5–14
 permalink: /programs/
+show_register_button: true
+# Intro (simple)
+intro:
+  title: Our Programs
+  lead: "Umpqua United offers recreational soccer for ages 5–14 and competitive soccer for ages 9–14. Choose a program below."
+# Program tiles (block-tiles)
+programs:
+  title: Our programs
+  tiles:
+    - title: Recreational
+      ages: "Ages 5–14 · Fall & Spring"
+      url: /programs/recreational
+      cta: false
+    - title: Competitive
+      ages: "Ages 9–14 · Tryouts"
+      url: /programs/competitive
+      cta: false
+    - title: Tryouts
+      ages: "HS Winter League"
+      url: /tryouts
+      cta: true
+# CTA text after tiles
+cta_note:
+  title: Registration
+  lead: "Tryouts are required for competitive teams. Registration for all programs is through our member platform."
 ---
 
-<section class="page-header">
-  <div class="container">
-    <h1>Our Programs</h1>
-    <p class="page-subtitle">Recreational and competitive soccer for ages 5–14</p>
-  </div>
-</section>
-
-<section class="page-content">
-  <div class="container">
-    <p class="programs-intro">Umpqua United offers recreational soccer for ages 5–14 and competitive soccer for ages 9–14. Choose a program below.</p>
-    <div class="programs-grid-bend">
-      <a href="{{ '/programs/recreational' | relative_url }}" class="program-tile">
-        <span class="program-tile-title">Recreational</span>
-        <span class="program-tile-ages">Ages 5–14 · Fall & Spring</span>
-      </a>
-      <a href="{{ '/programs/competitive' | relative_url }}" class="program-tile">
-        <span class="program-tile-title">Competitive</span>
-        <span class="program-tile-ages">Ages 9–14 · Tryouts</span>
-      </a>
-    </div>
-    <p class="programs-cta-text">
-      <a href="{{ '/tryouts' | relative_url }}">Tryouts</a> are required for competitive teams. Registration for all programs is through our member platform.
-    </p>
-    <a href="{{ site.stack_sports_register }}" class="btn btn-primary" target="_blank" rel="noopener">Register</a>
-  </div>
-</section>
+{% include page-header.html %}
+{% include content-open.html %}
+{% include block-simple.html block=page.intro %}
+{% include block-tiles.html block=page.programs wide=true %}
+{% include block-simple.html block=page.cta_note %}
+{% include block-button.html %}
+{% include content-close.html %}

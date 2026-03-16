@@ -1,0 +1,31 @@
+{% comment %}
+  Reusable block with title and tile grid (e.g. program tiles).
+  Params: title, tiles (array of {title, ages, url, cta}), background, wide. Or block (object).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _tiles = b.tiles %}
+  {% assign _background = b.background | default: include.background | default: "secondary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% else %}
+  {% assign _title = include.title %}
+  {% assign _tiles = include.tiles %}
+  {% assign _background = include.background | default: "secondary" %}
+  {% assign _wide = include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _tiles and _tiles.size > 0 %}
+    <div class="tile-grid">
+      {% for tile in _tiles %}
+      <a href="{{ tile.url | relative_url }}" class="program-tile {% if tile.cta %}program-tile-cta{% endif %}">
+        <span class="program-tile-title">{{ tile.title }}</span>
+        <span class="program-tile-ages">{{ tile.ages }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>

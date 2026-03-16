@@ -1,25 +1,28 @@
 ---
 layout: default
 title: Competitive
+subtitle: Ages 9–14 · Tryouts required
+# Intro
+intro:
+  title: Competitive
+  lead: "Our competitive program is for players ages 9–14. Teams are formed through tryouts, including our HS Winter League."
+# Tryouts (simple with links)
+tryouts:
+  title: Tryouts
+  lead: "Register for tryouts through our platform. Dates and age bands are posted before each season."
+# Footer links
+footer_links:
+  title: More information
+  links:
+    - title: Tryouts
+      url: /tryouts
+    - title: Field map
+      url: /fields
 ---
 
-<section class="page-header">
-  <div class="container">
-    <h1>Competitive</h1>
-    <p class="page-subtitle">Ages 9–14 · Tryouts required</p>
-  </div>
-</section>
-
-<section class="page-content">
-  <div class="container">
-    <div class="content-main">
-      <p>Our competitive program is for players ages 9–14. Teams are formed through tryouts, including our HS Winter League.</p>
-      <h2>Tryouts</h2>
-      <p>Register for tryouts through our platform. Dates and age bands are posted before each season.</p>
-      <p>
-        <a href="{{ '/tryouts' | relative_url }}" class="btn btn-primary">Tryouts</a>
-      </p>
-      <p><a href="{{ '/fields' | relative_url }}">Field map</a></p>
-    </div>
-  </div>
-</section>
+{% include page-header.html %}
+{% include content-open.html %}
+{% include block-simple.html block=page.intro %}
+{% include block-simple.html block=page.tryouts %}
+{% include block-links.html block=page.footer_links %}
+{% include content-close.html %}

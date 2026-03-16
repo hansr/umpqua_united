@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    {{ content }}
+    {% assign tiles = page.tiles %}
+    {% if tiles and tiles.size > 0 %}
+    <div class="tile-grid">
+      {% for tile in tiles %}
+      <a href="{{ tile.url | relative_url }}" class="program-tile {% if tile.cta %}program-tile-cta{% endif %}">
+        <span class="program-tile-title">{{ tile.title }}</span>
+        <span class="program-tile-ages">{{ tile.ages }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="tile-grid">
+      <a href="{{ '/programs/recreational' | relative_url }}" class="program-tile">
+        <span class="program-tile-title">Recreational</span>
+        <span class="program-tile-ages">Ages 5–14 · Fall & Spring</span>
+      </a>
+      <a href="{{ '/programs/competitive' | relative_url }}" class="program-tile">
+        <span class="program-tile-title">Competitive</span>
+        <span class="program-tile-ages">Ages 9–14 · Tryouts</span>
+      </a>
+    </div>
+    {% endif %}
+    {% if page.cta_text %}
+    <p class="programs-cta-text">{{ page.cta_text }}</p>
+    {% endif %}
+    {% if page.show_register_button %}
+    <p class="content-cta">
+      <a href="{{ site.stack_sports_register | default: '#' }}" class="btn btn-primary" target="_blank" rel="noopener">Register</a>
+    </p>
+    {% endif %}
+  </div>
+</section>

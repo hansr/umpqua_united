@@ -1,0 +1,26 @@
+{% assign hero_slides = include.hero_slides | default: page.hero_slides | default: site.hero_slides %}
+{% assign hero_slide_count = hero_slides | size %}
+<section class="hero hero-slider hero-cfc" data-slides="{{ hero_slide_count }}">
+  <div class="hero-slider-inner">
+    {% for slide in hero_slides %}
+    <div class="hero-slide {% if forloop.first %}hero-slide--active{% endif %}" data-slide="{{ forloop.index0 }}">
+      <div class="hero-background" {% if slide.image %}style="background-image: url('{{ slide.image | prepend: '/assets/images/' | relative_url }}');"{% endif %}></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">{{ slide.title }}</h1>
+          {% if slide.tagline %}<p class="hero-tagline">{{ slide.tagline }}</p>{% endif %}
+          {% if slide.text %}<p class="hero-mission">{{ slide.text }}</p>{% endif %}
+          <div class="hero-actions">
+            <a href="{{ slide.cta_primary_url | default: site.stack_sports_register | default: '/programs' }}" class="btn btn-primary btn-large" {% if slide.cta_primary_url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ slide.cta_primary_text }}</a>
+            {% if slide.cta_secondary_text %}<a href="{{ slide.cta_secondary_url | relative_url }}" class="btn btn-hero-outline btn-large">{{ slide.cta_secondary_text }}</a>{% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if hero_slide_count > 1 %}
+  <button type="button" class="hero-slider-btn hero-slider-prev" aria-label="Previous slide">&lsaquo;</button>
+  <button type="button" class="hero-slider-btn hero-slider-next" aria-label="Next slide">&rsaquo;</button>
+  {% endif %}
+</section>

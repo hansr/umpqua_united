@@ -1,0 +1,39 @@
+{% comment %}
+  Reusable block with title, card grid, and optional button.
+  Params: title, cards (array of {title, description, url}), button_title, button_link, background, wide. Or block (object).
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _cards = b.cards %}
+  {% assign _button_title = b.button_title | default: b.button_text %}
+  {% assign _button_link = b.button_link | default: b.button_url %}
+  {% assign _background = b.background | default: include.background | default: "secondary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% else %}
+  {% assign _title = include.title %}
+  {% assign _cards = include.cards %}
+  {% assign _button_title = include.button_title | default: include.button_text %}
+  {% assign _button_link = include.button_link | default: include.button_url %}
+  {% assign _background = include.background | default: "secondary" %}
+  {% assign _wide = include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _cards and _cards.size > 0 %}
+    <div class="card-grid">
+      {% for card in _cards %}
+      <a href="{{ card.url | relative_url }}" class="card">
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+        <span class="card-link">Read more →</span>
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if _button_title and _button_link %}
+    <a href="{{ _button_link | relative_url }}" class="btn btn-outline">{{ _button_title }}</a>
+    {% endif %}
+  </div>
+</section>

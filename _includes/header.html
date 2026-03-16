@@ -43,7 +43,10 @@
                 {% if item.title == 'About' %}
                 <ul class="dropdown">
                   <li><a href="{{ '/about' | relative_url }}">About Us</a></li>
+                  <li><a href="{{ '/about/player-development' | relative_url }}">Player Development</a></li>
                   <li><a href="{{ '/about/staff' | relative_url }}">Our Staff</a></li>
+                  <li><a href="{{ '/about/league-rules' | relative_url }}">League Rules</a></li>
+                  <li><a href="{{ '/about/age-groups' | relative_url }}">Age Groups</a></li>
                   <li><a href="{{ '/about/code-of-conduct' | relative_url }}">Code of Conduct</a></li>
                 </ul>
                 {% endif %}
@@ -52,6 +55,7 @@
                   <li><a href="{{ '/programs' | relative_url }}">Programs Overview</a></li>
                   <li><a href="{{ '/programs/recreational' | relative_url }}">Recreational</a></li>
                   <li><a href="{{ '/programs/competitive' | relative_url }}">Competitive</a></li>
+                  <li><a href="{{ '/tryouts' | relative_url }}">Tryouts</a></li>
                 </ul>
                 {% endif %}
               </li>
@@ -68,4 +72,19 @@
       </button>
     </div>
   </div>
+  {% assign home_page = site.pages | where: "url", "/" | first %}
+  {% if home_page == nil %}{% assign home_page = site.pages | where: "url", "/index.html" | first %}{% endif %}
+  {% assign ann_source = home_page.announcements | default: site.announcements %}
+  {% assign ann_count = ann_source | size %}
+  {% if ann_count > 0 %}
+  <div class="announcement-banner" aria-label="Announcements">
+    <div class="container">
+      <div class="announcement-banner-rotator">
+        {% for msg in ann_source %}
+        <div class="announcement-banner-slide {% if forloop.first %}announcement-banner-slide--active{% endif %}" data-slide="{{ forloop.index0 }}">{{ msg }}</div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </header>

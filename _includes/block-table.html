@@ -1,0 +1,39 @@
+{% comment %}
+  Reusable block with title and table. Params: block (object with title, headers, rows).
+  rows: array of arrays, one per row (e.g. [["U6", "5–6", "Notes"], ...])
+{% endcomment %}
+{% if include.block %}
+  {% assign b = include.block %}
+  {% assign _title = b.title %}
+  {% assign _headers = b.headers %}
+  {% assign _rows = b.rows %}
+  {% assign _background = b.background | default: include.background | default: "primary" %}
+  {% assign _wide = b.wide | default: include.wide %}
+{% endif %}
+<section class="block block--{{ _background }} info-block {% if _wide %}block--wide{% endif %}">
+  <div class="container">
+    {% if _title %}<h2 class="section-title">{{ _title }}</h2>{% endif %}
+    {% if _headers and _rows %}
+    <div class="table-wrapper">
+      <table class="block-table">
+        <thead>
+          <tr>
+            {% for h in _headers %}
+            <th>{{ h }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in _rows %}
+          <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </div>
+</section>

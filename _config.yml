@@ -1,12 +1,12 @@
 # Site settings
 title: Umpqua United Soccer Club
-description: Umpqua United Soccer Club - Building champions on and off the field. Roseburg, Oregon.
+description: Umpqua United Soccer Club - Central Oregon Youth Soccer in Roseburg, Oregon.
 email: info@umpquaunited.org
 baseurl: ""
 url: "https://www.umpquaunited.org"
 
 # Identity (from spec)
-tagline: Building champions on and off the field
+tagline: Building the next generation through soccer
 mission: To develop outstanding individuals through quality programs and to foster a life-long passion for soccer.
 vision: To create a united, all-inclusive soccer club and to establish a safe and fun environment to empower each player to their full potential.
 founded: 1974
@@ -31,12 +31,8 @@ navigation:
     url: /about
   - title: Programs
     url: /programs
-  - title: Tryouts
-    url: /tryouts
   - title: Fields
     url: /fields
-  - title: News
-    url: /news
   - title: Get Involved
     url: /get-involved
   - title: Contact
@@ -63,45 +59,3 @@ exclude:
 social:
   facebook: https://www.facebook.com/umpquaunited
   instagram: https://www.instagram.com/umpquaunited
-
-# Helpful links (home page)
-helpful_links:
-  - title: Oregon Youth Soccer Association
-    url: https://oregonyouthsoccer.org/
-  - title: Available Programs
-    url: /programs
-  - title: Volunteer Opportunities
-    url: /get-involved/#volunteers
-  - title: OYSA COVID-19 Resource Page
-    url: https://oregonyouthsoccer.org/about-oysa/covid-19-info/
-
-# Sponsors (home page - logos in assets/images/sponsors)
-sponsors:
-  - name: In-N-Out Burger
-    url: https://www.in-n-out.com/
-    image: inandout.png
-  - name: Lowe's Home Improvement
-    url: https://www.lowes.com/
-    image: lowes.jpg
-  - name: DC Farms Coop
-    url: https://douglascountyfarmerscoop.com/
-    image: dcfarmers.jpg
-  - name: Sherm's Thunderbird
-    url: https://www.shermsmarkets.com/
-    image: sherms.png
-  - name: Roseburg Forest Products
-    url: https://www.roseburg.com/
-    image: rfp.png
-
-# Club information links (Bend FC style - important club info)
-club_info_links:
-  - title: Game Schedule
-    url: https://www.umpquaunited.org/Default.aspx?tabid=2723647
-  - title: League Rules
-    url: https://www.umpquaunited.org/Default.aspx?tabid=2750345
-  - title: Registration & Forms
-    url: https://www.umpquaunited.org/Default.aspx?tabid=1903238
-  - title: Field Map
-    url: /fields
-  - title: Code of Conduct
-    url: /about/code-of-conduct

@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    {% if page.subtitle %}<p class="page-subtitle">{{ page.subtitle }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    <div class="content-main">
+      {{ content }}
+      {% if page.button_url %}
+      <p class="content-cta">
+        <a href="{{ page.button_url }}" class="btn btn-primary btn-large" {% if page.button_url contains 'http' %}target="_blank" rel="noopener"{% endif %}>{{ page.button_text | default: "Register" }}</a>
+      </p>
+      {% endif %}
+      {% if page.show_register_button %}
+      <p class="content-cta">
+        <a href="{{ site.stack_sports_register | default: '#' }}" class="btn btn-primary btn-large" target="_blank" rel="noopener">{{ page.button_text | default: "Register" }}</a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
