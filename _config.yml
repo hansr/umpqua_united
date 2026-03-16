@@ -2,7 +2,8 @@
 title: Umpqua United Soccer Club
 description: Umpqua United Soccer Club - Central Oregon Youth Soccer in Roseburg, Oregon.
 email: info@umpquaunited.org
-baseurl: ""
+# For GitHub Pages project site (hansr.github.io/umpqua_united); omit for custom domain at root
+baseurl: "/umpqua_united"
 url: "https://www.umpquaunited.org"
 
 # Identity (from spec)
